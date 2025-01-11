@@ -7,7 +7,7 @@ const Landing = () => {
     <div className={styles.main}>
       <nav className={styles.nav}>
         <h3>DevLink</h3>
-        <button>Get Started</button>
+        <Link to="/signup"><button className={styles.navBtn}>Get Started</button></Link>
       </nav>
 
       <div className={styles.heroSec}>
