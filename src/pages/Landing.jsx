@@ -20,7 +20,7 @@ const Landing = () => {
       </div>
 
       <div className={styles.imgSec}>
-        <img src='../src/assets/landing1.png'></img>
+        <img src='../src/assets/landing2.png'></img>
       </div>
 
       <h3 className={styles.featuresH3}>Features & Overview</h3>

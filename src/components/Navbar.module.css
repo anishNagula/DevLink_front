@@ -10,6 +10,8 @@
   border-bottom: 1px solid #333;
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 1000;
   box-sizing: border-box;
 }
@@ -26,7 +28,8 @@
   margin: 0 15px;
   color: #ddd;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .navLinks a:hover {

@@ -11,7 +11,7 @@ const Signup = () => {
   return (
     <div className={styles.main}>
       <div className={styles.signupCard}>
-        <h2>Welcome To DevLink</h2>
+        <h2>Welcome To DevHub</h2>
         <form className={styles.form}>
           <input type="text" placeholder="Name" className={styles.input} />
           <input type="email" placeholder="Email" className={styles.input} />
