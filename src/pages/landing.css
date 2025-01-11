@@ -1,0 +1,265 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  background: 
+    /* Grid mesh pattern */
+    linear-gradient(90deg, rgba(58, 58, 58, 0.3) 1px, transparent 1px),
+    linear-gradient(rgba(58, 58, 58, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  text-align: center;
+}
+
+.nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: 1px solid #2e2e2e;
+  backdrop-filter: blur(10px);
+}
+
+.nav > h3 {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.nav > button {
+  background-color: transparent;
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-right: 20px;
+}
+
+.nav > button:hover {
+  background-color: #f6f4f1;
+  color: #1e1e1e;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.heroSec {
+  padding-top: 60px;
+  margin-bottom: 100px;
+}
+
+.hero1 {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: -20px;
+}
+
+.hero2 {
+  margin-top: 5px;
+  font-size: 38px;
+  font-weight: normal;
+  background: -webkit-linear-gradient(45deg,#22c1b0,  /* Darker teal */
+  #6b74e0,  /* Muted blue */
+  #8b74db);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroBtn1, .heroBtn2 {
+  width: 135px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.heroBtn1 {
+  margin-right: 20px;
+  background: transparent;
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 6px;
+}
+
+.heroBtn2 {
+  background-color: #f6f4f1;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+}
+
+.imgSec > img {
+  width: 75%;
+  height: auto;
+  margin-bottom: 200px;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  background: 
+    /* Grid mesh pattern */
+    linear-gradient(90deg, rgba(58, 58, 58, 0.3) 1px, transparent 1px),
+    linear-gradient(rgba(58, 58, 58, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  text-align: center;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: 1px solid #2e2e2e;
+  backdrop-filter: blur(2px);
+}
+
+.nav > h3 {
+  margin-left: 40px;
+  font-size: 20px;
+}
+
+.nav > button {
+  background-color: transparent;
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-right: 40px;
+}
+
+.nav > button:hover {
+  background-color: #f6f4f1;
+  color: #1e1e1e;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.heroSec {
+  margin-bottom: 100px;
+}
+
+.hero1 {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: -20px;
+}
+
+.hero2 {
+  margin-top: 5px;
+  font-size: 38px;
+  font-weight: normal;
+  background: -webkit-linear-gradient(45deg,#22c1b0,  /* Darker teal */
+  #6b74e0,  /* Muted blue */
+  #8b74db);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroBtn1, .heroBtn2 {
+  width: 135px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.heroBtn1 {
+  margin-right: 20px;
+  background: transparent;
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 6px;
+}
+
+.heroBtn1:hover {
+  background-color: rgba(58, 58, 58, 0.3);
+}
+
+.heroBtn2 {
+  background-color: #f6f4f1;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+}
+
+.heroBtn2:hover {
+  background-color: rgba(246, 244, 241, 0.95);
+}
+
+.imgSec > img {
+  width: 75%;
+  height: auto;
+  margin-bottom: 150px;
+}
+
+.featuresH3 {
+  font-size: 30px;
+}
+
+.featureOver {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  margin-bottom: 100px;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.featureCard {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  width: 220px; /* Adjust width for proper spacing */
+  height: 80px; /* Adjust height for proper spacing */
+  padding: 20px;
+  border: 1px solid rgb(58, 58, 58); /* Thin gray border */
+  border-radius: 10px; /* Rounded corners */
+  background: transparent; /* Transparent white background */
+  backdrop-filter: blur(1px); /* Apply blur effect */
+  color: #929399;
+  transition: transform 0.7s ease; /* Smooth transform on hover */
+  margin: 10px;
+  cursor: pointer;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px); /* Slight hover lift effect */
+}
+
+.featureCard > span {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .featureCard {
+    width: 90%; /* Make cards wider on smaller screens */
+    margin-bottom: 15px;
+  }
+}
+
+.HowItWorks {
+  margin-bottom: 80px;
+}
+
+footer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30px;
+  gap: 40px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgb(58, 58, 58);
+}
+
+footer > a {
+  text-decoration: none;
+  color: white;
+}
