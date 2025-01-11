@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './LeftSidebar.module.css';
+import userProfilePic from '../assets/anish.jpg';
 
 const LeftSidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.profileSection}>
         <img 
-          src="../src/assets/anish.jpg" 
+          src={userProfilePic} 
           alt="User" 
           className={styles.profileImage} 
         />

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './landing.module.css'
+import landingImage from '../assets/landing3.png'
 
 const Landing = () => {
   return (
@@ -20,7 +21,7 @@ const Landing = () => {
       </div>
 
       <div className={styles.imgSec}>
-        <img src='../src/assets/landing2.png'></img>
+        <img src={landingImage}></img>
       </div>
 
       <h3 className={styles.featuresH3}>Features & Overview</h3>
