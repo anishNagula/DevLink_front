@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div className={styles.main}>
       <nav className={styles.nav}>
-        <h3>DevLink</h3>
+        <h3>DevHub</h3>
         <Link to="/signup"><button className={styles.navBtn}>Get Started</button></Link>
       </nav>
 
