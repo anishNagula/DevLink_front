@@ -1,0 +1,78 @@
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #333;
+  position: fixed;
+  left: 0;
+  top: 60px;
+    background: 
+      /* Grid mesh pattern */
+      linear-gradient(90deg, rgba(58, 58, 58, 0.35) 1px, transparent 1px),
+      linear-gradient(rgba(58, 58, 58, 0.35) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 100% 100%;
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.profileSection h3,p {
+  font-size: 14px;
+  margin: 2px;
+}
+.profileImage {
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.userInfo {
+  width: auto;
+  padding: 0 20px;
+}
+
+.viewProfileButton {
+  padding: 4px 8px;
+  background-color: transparent;
+  border: 1px solid #6b74e0;
+  border-radius: 5px;
+  color: #6b74e0;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.nav {
+  border: 1px solid rgb(58,58,58);
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.nav h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav li {
+  margin-bottom: 10px;
+}
+
+.nav li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  color: #6b74e0;
+}
