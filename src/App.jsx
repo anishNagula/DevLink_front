@@ -4,8 +4,8 @@ import Landing from './pages/Landing';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Home from './pages/Home';
-/* import Forum from './pages/Forum';
-import Messaging from './pages/Messaging';
+import Forum from './pages/Forum';
+/* import Messaging from './pages/Messaging';
 import Profile from './pages/Profile';
 import Landing from './pages/Landing';
 import Settings from './pages/Settings';
@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={<Home/>} />
+        <Route path="/forum" element={<Forum/>} />
       </Routes>
     </Router>
   )
