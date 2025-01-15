@@ -1,66 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import likeIcon from '../assets/thumbs-up-stroke-rounded.svg';
 import commentIcon from '../assets/bubble-chat-stroke-rounded.svg';
 import Navbar from '../components/Navbar';
 import LeftSidebar from '../components/LeftSidebar';
 import RightSidebar from '../components/RightSidebar';
+import axios from 'axios'; // Add axios for making HTTP requests
 import styles from './home.module.css';
 
 const Home = () => {
   const [expandedPostId, setExpandedPostId] = useState(null);
+  const [posts, setPosts] = useState([]); // To store posts fetched from the server
+  const [loading, setLoading] = useState(true); // To track the loading state
+  const [error, setError] = useState(null); // To track any errors during fetching
+
+  useEffect(() => {
+    // Fetch posts from the API
+    const fetchPosts = async () => {
+      try {
+        const token = localStorage.getItem('token'); // Make sure the token is stored in localStorage
+        const res = await axios.get('http://localhost:5000/api/posts', {
+          headers: {
+            'Authorization': `Bearer ${token}`, // Include the token in the request header
+          },
+        });
+        setPosts(res.data); // Set posts data from the server
+        setLoading(false); // Stop loading
+      } catch (err) {
+        setError('Failed to fetch posts');
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   const toggleComments = (postId) => {
     setExpandedPostId(expandedPostId === postId ? null : postId);
   };
 
-  const posts = [
-    {
-      id: 1,
-      username: "techguru99",
-      profilePic: "https://randomuser.me/api/portraits/men/75.jpg",
-      uploadTime: '1',
-      title: "JavaScript Tips for Beginners",
-      description: "Here are some tips for those just starting out with JavaScript. Learn the basics and more advanced techniques.",
-      image: "https://picsum.photos/200/300",
-      likeCount: 120,
-      commentCount: 25,
-      comments: [
-        { username: "coder123", comment: "Great tips! I didn't know about the destructuring feature." },
-        { username: "devmaster", comment: "These are helpful, thanks for sharing!" }
-      ],
-    },
-    {
-      id: 2,
-      username: "codebreaker",
-      profilePic: "https://randomuser.me/api/portraits/men/76.jpg",
-      uploadTime: '4',
-      title: "My Experience with React Hooks",
-      description: "I recently started using React Hooks in my projects and wanted to share my thoughts on them.",
-      image: null,
-      likeCount: 45,
-      commentCount: 10,
-      comments: [
-        { username: "reactfan", comment: "Hooks are a game-changer!" },
-        { username: "webdevguru", comment: "I love the simplicity of useState." }
-      ],
-    },
-    {
-      id: 3,
-      username: "frontendlady",
-      profilePic: "https://randomuser.me/api/portraits/women/75.jpg",
-      uploadTime: '7',
-      title: "Building My First Full-Stack App",
-      description: "I just finished my first full-stack application using Node.js, Express, and MongoDB. Here's how it went.",
-      image: "https://picsum.photos/seed/picsum/500/250",
-      likeCount: 200,
-      commentCount: 40,
-      comments: [
-        { username: "backendwizard", comment: "Impressive! I'm working on something similar." },
-        { username: "frontenddev", comment: "Great project! Any tips for beginners?" }
-      ],
-    }
-  ];
+  if (loading) {
+    return <div>Loading...</div>; // Show loading state
+  }
+
+  if (error) {
+    return <div>{error}</div>; // Show error message if fetch fails
+  }
 
   return (
     <div className={styles.main}>
@@ -69,31 +54,37 @@ const Home = () => {
       <RightSidebar />
       <div className={styles.mainFeed}>
         {posts.map((post) => (
-          <div key={post.id} className={styles.feedItem}>
+          <div key={post._id} className={styles.feedItem}> {/* Use _id from the MongoDB object */}
             <div className={styles.userInfo}>
-              <img src={post.profilePic} alt={`${post.username}'s profile`} className={styles.profilePic} />
-              <span className={styles.username}>{post.username}</span>
-              <span className={styles.uploadTime}>{post.uploadTime} hr ago</span>
+              <img
+                src={post.author.profilePic || "https://randomuser.me/api/portraits/men/75.jpg"} // Handle missing profile pic
+                alt={`${post.author.username}'s profile`}
+                className={styles.profilePic}
+              />
+              <span className={styles.username}>{post.author.username}</span>
+              <span className={styles.uploadTime}>
+                {new Date(post.createdAt).toLocaleString()} {/* Format the createdAt field */}
+              </span>
             </div>
             <h2 className={styles.title}>{post.title}</h2>
-            <p className={styles.description}>{post.description}</p>
+            <p className={styles.description}>{post.content}</p>
             {post.image && <img src={post.image} alt="Post visual" className={styles.postImage} />}
             <div className={styles.stats}>
               <div className={styles.iconWrapper}>
                 <img src={likeIcon} alt="Like icon" className={styles.icon} />
-                <span>{post.likeCount}</span>
+                <span>{post.likes.length}</span> {/* Display the number of likes */}
               </div>
-              <div className={styles.iconWrapper} onClick={() => toggleComments(post.id)}>
+              <div className={styles.iconWrapper} onClick={() => toggleComments(post._id)}>
                 <img src={commentIcon} alt="Comment icon" className={styles.icon} />
-                <span>{post.commentCount}</span>
+                <span>{post.comments.length}</span> {/* Display the number of comments */}
               </div>
             </div>
-            {expandedPostId === post.id && (
+            {expandedPostId === post._id && (
               <div className={styles.commentsSection}>
                 {post.comments.map((comment, idx) => (
                   <div key={idx} className={styles.comment}>
                     <span className={styles.commentUser}>{comment.username}:</span>
-                    <span className={styles.commentText}>{comment.comment}</span>
+                    <span className={styles.commentText}>{comment.content}</span> {/* Display the comment content */}
                   </div>
                 ))}
               </div>

@@ -5,11 +5,11 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Forum from './pages/Forum';
+import CreatePost from './pages/CreatePost';
 /* import Messaging from './pages/Messaging';
 import Profile from './pages/Profile';
 import Landing from './pages/Landing';
 import Settings from './pages/Settings';
-import CreatePost from './pages/CreatePost';
 import DetailedPost from './pages/DetailedPost'; */
 
 
@@ -22,6 +22,7 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/forum" element={<Forum/>} />
+        <Route path="/createPost" element={<CreatePost/>} />
       </Routes>
     </Router>
   )

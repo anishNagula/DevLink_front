@@ -17,7 +17,7 @@ const LeftSidebar = () => {
           <button className={styles.viewProfileButton}>View Profile</button>
         </div>
       </div>
-      
+      <Link to='/createPost'><button className={styles.createPostBtn}>Create Post</button></Link>
       
     </div>
   );
