@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
+import API_BASE_URL from '../config';
 import LeftSidebar from '../components/LeftSidebar';
 import RightSidebar from '../components/RightSidebar';
 import styles from './createPost.module.css';
@@ -21,7 +22,7 @@ const CreatePost = () => {
     if (image) formData.append('image', image); // Only append image if it's selected
 
     try {
-      const res = await axios.post('http://localhost:5000/api/posts/createPost', formData, {
+      const res = await axios.post(`${API_BASE_URL}/api/posts/createPost`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include token in the request header

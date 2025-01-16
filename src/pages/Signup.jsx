@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../config';
 import axios from 'axios';
 import styles from './signup.module.css';
 
@@ -16,7 +17,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       // Send the form data to the backend /register route
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/register`, {
         username: formData.name,
         email: formData.email,
         password: formData.password,

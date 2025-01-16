@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../config';
 import likeIcon from '../assets/thumbs-up-stroke-rounded.svg';
 import commentIcon from '../assets/bubble-chat-stroke-rounded.svg';
 import Navbar from '../components/Navbar';
@@ -19,7 +20,7 @@ const Home = () => {
     const fetchPosts = async () => {
       try {
         const token = localStorage.getItem('token'); // Make sure the token is stored in localStorage
-        const res = await axios.get('http://localhost:5000/api/posts', {
+        const res = await axios.get(`${API_BASE_URL}/api/posts`, {
           headers: {
             'Authorization': `Bearer ${token}`, // Include the token in the request header
           },
